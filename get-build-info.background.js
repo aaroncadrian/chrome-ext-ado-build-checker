@@ -12,13 +12,15 @@ chrome.runtime.onMessage.addListener((message, sender) => {
   chrome.declarativeContent.onPageChanged.removeRules([sender.url]);
 
   if (!!version) {
+    const url = new URL(sender.url);
+
     chrome.declarativeContent.onPageChanged.addRules([
       {
         id: sender.url,
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
-              urlEquals: sender.url,
+              hostEquals: url.host,
             },
           }),
         ],
