@@ -1,4 +1,4 @@
-import { versionInfoMessage } from './version-info.message';
+import { versionInfoMessage } from '../../version-info.message';
 
 const findMetaTag = () => {
   const metaTag = document.querySelector('meta[name="version"]');

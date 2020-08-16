@@ -7,7 +7,8 @@ module.exports = {
   entry: {
     background: './extension/background/index.js',
     popup: './popup.js',
-    'find-version-meta.content': './find-version-meta.content.js',
+    'find-version-meta.content':
+      './extension/content-scripts/find-version-meta.content.js',
   },
   plugins: [
     new CleanWebpackPlugin(),
