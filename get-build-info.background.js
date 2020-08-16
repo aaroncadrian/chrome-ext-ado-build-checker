@@ -9,6 +9,8 @@ chrome.runtime.onMessage.addListener((message, sender) => {
 
   console.log('FINDING INFO ABOUT VERSION', { version, sender });
 
+  chrome.declarativeContent.onPageChanged.removeRules([sender.url]);
+
   if (!!version) {
     chrome.declarativeContent.onPageChanged.addRules([
       {
@@ -23,7 +25,5 @@ chrome.runtime.onMessage.addListener((message, sender) => {
         actions: [new chrome.declarativeContent.ShowPageAction()],
       },
     ]);
-  } else {
-    chrome.declarativeContent.onPageChanged.removeRules([sender.url]);
   }
 });
