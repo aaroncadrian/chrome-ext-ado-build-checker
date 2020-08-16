@@ -9,18 +9,19 @@ chrome.runtime.onMessage.addListener((message, sender) => {
 
   console.log('FINDING INFO ABOUT VERSION', { version, sender });
 
-  chrome.declarativeContent.onPageChanged.removeRules([sender.url]);
+  const url = new URL(sender.url);
+  const { host } = url;
+
+  chrome.declarativeContent.onPageChanged.removeRules([host]);
 
   if (!!version) {
-    const url = new URL(sender.url);
-
     chrome.declarativeContent.onPageChanged.addRules([
       {
-        id: sender.url,
+        id: host,
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
-              hostEquals: url.host,
+              hostEquals: host,
             },
           }),
         ],
