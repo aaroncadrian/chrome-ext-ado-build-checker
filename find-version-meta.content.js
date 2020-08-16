@@ -1,3 +1,5 @@
+import { versionInfoMessage } from './version-info.message';
+
 const findMetaTag = () => {
   const metaTag = document.querySelector('meta[name="version"]');
 
@@ -5,10 +7,7 @@ const findMetaTag = () => {
 
   console.log({ version });
 
-  chrome.runtime.sendMessage({
-    type: 'VERSION_INFO',
-    version,
-  });
+  chrome.runtime.sendMessage(versionInfoMessage(version));
 };
 
 findMetaTag();
