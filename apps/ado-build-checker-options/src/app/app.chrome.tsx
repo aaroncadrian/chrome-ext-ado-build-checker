@@ -2,11 +2,11 @@ import React from 'react';
 
 import './app.scss';
 import SettingsForm from './settings-form';
+import { createChromeSettingsSource } from './settings-source.chrome';
 import { SettingsSource } from './settings-source.context';
-import { createDummySettingsSource } from './settings-source.dummy';
 
 export const App = () => {
-  const settingsSource = createDummySettingsSource();
+  const settingsSource = createChromeSettingsSource();
 
   return (
     <SettingsSource.Provider value={settingsSource}>

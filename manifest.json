@@ -1,0 +1,24 @@
+{
+  "name": "Azure DevOps Build Checker",
+  "version": "1.0",
+  "description": "Checks which Azure DevOps build a web application is associated with.",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "options_ui": {
+    "page": "apps/ado-build-checker-options/index.html"
+  },
+  "background": {
+    "scripts": ["background.js", "get-build-info.background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["find-version-meta.content.js"]
+    }
+  ],
+  "author": "Aaron Adrian",
+  "manifest_version": 2
+}

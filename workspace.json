@@ -29,8 +29,13 @@
                 {
                   "replace": "apps/ado-build-checker-options/src/environments/environment.ts",
                   "with": "apps/ado-build-checker-options/src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "apps/ado-build-checker-options/src/app/app.tsx",
+                  "with": "apps/ado-build-checker-options/src/app/app.chrome.tsx"
                 }
               ],
+              "baseHref": ".",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
