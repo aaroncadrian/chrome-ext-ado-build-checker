@@ -7,7 +7,7 @@
     "page": "apps/ado-build-checker-options/index.html"
   },
   "background": {
-    "scripts": ["background.js", "get-build-info.background.js"],
+    "scripts": ["background.js"],
     "persistent": false
   },
   "page_action": {

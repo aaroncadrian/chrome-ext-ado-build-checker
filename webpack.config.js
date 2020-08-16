@@ -5,10 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    background: './background.js',
+    background: './extension/background/index.js',
     popup: './popup.js',
     'find-version-meta.content': './find-version-meta.content.js',
-    'get-build-info.background': './extension/background/index.js',
   },
   plugins: [
     new CleanWebpackPlugin(),
