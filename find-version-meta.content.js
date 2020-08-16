@@ -3,12 +3,12 @@ const findMetaTag = () => {
 
   const version = metaTag && metaTag.getAttribute('content');
 
+  console.log({ version });
+
   chrome.runtime.sendMessage({
     type: 'VERSION_INFO',
     version,
   });
-
-  console.groupEnd();
 };
 
 findMetaTag();
