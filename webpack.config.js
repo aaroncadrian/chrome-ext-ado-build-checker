@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    background: './extension/background/index.ts',
+    background: './extension/background/index.js',
     popup: './popup.js',
     'find-version-meta.content':
       './extension/content-scripts/find-version-meta.content.js',
