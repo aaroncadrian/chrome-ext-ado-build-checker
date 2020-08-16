@@ -1,4 +1,4 @@
-import { versionInfoMessage } from '../../../version-info.message';
+import { versionInfoMessage } from '../../version-info.message';
 
 chrome.runtime.onMessage.addListener((message, sender) => {
   if (message.type !== versionInfoMessage.type) {
