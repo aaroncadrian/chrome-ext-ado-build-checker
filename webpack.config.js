@@ -25,6 +25,17 @@ module.exports = {
       chunks: ['popup'],
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: ['ts-loader'],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
